@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>𝐒𝐮𝐓𝐚𝐗𝐝 Hosting - Layanan Panel & Hosting Terbaik</title>
+    <style>
+        :root {
+            --primary: #6a11cb;
+            --secondary: #2575fc;
+            --dark: #1a1a2e;
+            --light: #f8f9fa;
+            --success: #28a745;
+            --danger: #dc3545;
+            --warning: #ffc107;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--dark);
+            color: var(--light);
+            background-image: url('https://files.catbox.moe/7wmchy.mp4');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            position: relative;
+        }
+        
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            z-index: -1;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        header {
+            text-align: center;
+            padding: 30px 0;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://files.catbox.moe/7wmchy.mp4') no-repeat center/cover;
+            opacity: 0.2;
+            z-index: -1;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            background: linear-gradient(to right, #fff, #ddd);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .whatsapp-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 25px;
+            background-color: #25D366;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
+        }
+        
+        .whatsapp-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.6);
+        }
+        
+        .whatsapp-btn i {
+            margin-right: 8px;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin: 40px 0 30px;
+            font-size: 2rem;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+        
+        .product-card {
+            background: rgba(26, 26, 46, 0.8);
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            border-color: var(--primary);
+        }
+        
+        .product-title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: white;
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 10px;
+        }
+        
+        .product-price {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin: 15px 0;
+            color: var(--warning);
+        }
+        
+        .features {
+            list-style-type: none;
+            margin-bottom: 20px;
+        }
+        
+        .features li {
+            padding: 8px 0;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .features li::before {
+            content: '✓';
+            color: var(--success);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        
+        .order-btn {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .order-btn:hover {
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            transform: translateY(-2px);
+        }
+        
+        .vps-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            background: rgba(26, 26, 46, 0.8);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .vps-table th, .vps-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .vps-table th {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+        }
+        
+        .vps-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .vps-table tr:hover {
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+        
+        .bonus-section {
+            background: rgba(106, 17, 203, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 30px 0;
+            border-left: 5px solid var(--primary);
+        }
+        
+        .bonus-title {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--warning);
+        }
+        
+        .bonus-list {
+            list-style-type: none;
+        }
+        
+        .bonus-list li {
+            padding: 8px 0;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .bonus-list li::before {
+            content: '★';
+            color: var(--warning);
+            position: absolute;
+            left: 0;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 50px;
+            background: rgba(26, 26, 46, 0.8);
+            border-radius: 10px;
+        }
+        
+        .contact-info {
+            margin-top: 20px;
+        }
+        
+        .contact-info a {
+            color: var(--secondary);
+            text-decoration: none;
+        }
+        
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .products {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>𝐒𝐮𝐓𝐚𝐗𝐝 HOSTING</h1>
+            <p class="tagline">Layanan Panel & Hosting Terbaik dengan Fitur Lengkap</p>
+            <a href="https://wa.me/6283141990011" class="whatsapp-btn">
+                <i class="fab fa-whatsapp"></i> Hubungi Kami via WhatsApp
+            </a>
+        </header>
+        
+        <h2 class="section-title">PAKET PANEL HOSTING</h2>
+        
+        <div class="products">
+            <!-- Reseller Panel Public -->
+            <div class="product-card">
+                <h3 class="product-title">RESELLER PANEL PUBLIC</h3>
+                <div class="product-price">Rp7.000</div>
+                <ul class="features">
+                    <li>BISA JUAL PANEL</li>
+                    <li>JASA SEWA BOT</li>
+                    <li>BEBAS CREATE</li>
+                    <li>BISA BALMOND KLAU USAHA</li>
+                    <li>PERMANEN ANTI PT PT</li>
+                </ul>
+                <button class="order-btn" onclick="window.location.href='https://wa.me/6283141990011'">Pesan Sekarang</button>
+            </div>
+            
+            <!-- Reseller Panel Private -->
+            <div class="product-card">
+                <h3 class="product-title">RESELLER PANEL PRIVATE</h3>
+                <div class="product-price">Rp13.000</div>
+                <ul class="features">
+                    <li>BISA JUAL PANEL</li>
+                    <li>JASA SEWA BOT</li>
+                    <li>BEBAS CREATE</li>
+                    <li>BISA BALMOND KLAU USAHA</li>
+                    <li>PERMANEN ANTI PT PT</li>
+                </ul>
+                <button class="order-btn" onclick="window.location.href='https://wa.me/6283141990011'">Pesan Sekarang</button>
+            </div>
+            
+            <!-- Admin Panel Public -->
+            <div class="product-card">
+                <h3 class="product-title">ADMIN PANEL PUBLIC</h3>
+                <div class="product-price">Rp25.000</div>
+                <ul class="features">
+                    <li>BISA OPEN RESELLER PANEL</li>
+                    <li>BISA JUAL PANEL</li>
+                    <li>BISA OPEN JASA SEWA BOT</li>
+                    <li>ANTI GIMMIK</li>
+                    <li>BALMOND KLAU USAHA</li>
+                    <li>PERMANEN ANTI PT PT</li>
+                </ul>
+                <button class="order-btn" onclick="window.location.href='https://wa.me/6283141990011'">Pesan Sekarang</button>
+            </div>
+            
+            <!-- Admin Panel Private -->
+            <div class="product-card">
+                <h3 class="product-title">ADMIN PANEL PRIVATE</h3>
+                <div class="product-price">Rp30.000</div>
+                <ul class="features">
+                    <li>BISA OPEN RESELLER PANEL</li>
+                    <li>BISA JUAL PANEL</li>
+                    <li>BISA OPEN JASA SEWA BOT</li>
+                    <li>BALMOND KLAU USAHA</li>
+                    <li>ANTI GIMMIK</li>
+                    <li>DPT 2 SERVED YG BERBEDA</li>
+                    <li>PERMANEN ANTI PT PT</li>
+                </ul>
+                <button class="order-btn" onclick="window.location.href='https://wa.me/6283141990011'">Pesan Sekarang</button>
+            </div>
+            
+            <!-- Partner Panel Public -->
+            <div class="product-card">
+                <h3 class="product-title">PARTNER PANEL PUBLIC</h3>
+                <div class="product-price">Rp40.000</div>
+                <ul class="features">
+                    <li>BISA OPEN ADMIN PANEL</li>
+                    <li>BISA OPEN RESELLER PANEL</li>
+                    <li>BISA JUAL PANEL</li>
+                    <li>BISA OPEN JASA SEWA BOT</li>
+                    <li>BALMOND KLAU USAHA</li>
+                    <li>ANTI GIMMIK</li>
+                    <li>DPT 2 SERVER YG BERBEDA</li>
+                    <li>PERMANEN ANTI PT PT</li>
+                </ul>
+                <button class="order-btn" onclick="window.location.href='https://wa.me/6283141990011'">Pesan Sekarang</button>
+            </div>
+            
+            <!-- Partner Panel Private -->
+            <div class="product-card">
+                <h3 class="product-title">PARTNER PANEL PRIVATE</h3>
+                <div class="product-price">Rp45.000</div>
+                <ul class="features">
+                    <li>BISA OPEN ADMIN PANEL</li>
+                    <li>BISA OPEN RESELLER PANEL</li>
+                    <li>BISA JUAL PANEL</li>
+                    <li>BISA OPEN JASA SEWA BOT</li>
+                    <li>BALMOND KLAU USAHA</li>
+                    <li>ANTI GIMMIK</li>
+                    <li>DPT 3 SERVER YG BERBEDA</li>
+                    <li>PERMANEN ANTI PT PT</li>
+                </ul>
+                <button class="order-btn" onclick="window.location.href='https://wa.me/6283141990011'">Pesan Sekarang</button>
+            </div>
+            
+            <!-- Owner Panel Public -->
+            <div class="product-card">
+                <h3 class="product-title">OWNER PANEL PUBLIC</h3>
+                <div class="product-price">Rp50.000</div>
+                <ul class="features">
+                    <li>BISA OPEN PATNER PANEL</li>
+                    <li>BISA OPEN ADMIN PANEL</li>
+                    <li>BISA OPEN RESELLER PANEL</li>
+                    <li>BISA OPEN PANEL</li>
+                    <li>BISA OPEN JASA SEWA BOT</li>
+                    <li>BALMOND KLAU USAHA</li>
+                    <li>ANTI GIMMIK</li>
+                    <li>DPT 3 SERVER YG BERBEDA</li>
+                    <li>ANTI PT PT</li>
+                </ul>
+                <button class="order-btn" onclick="window.location.href='https://wa.me/6283141990011'">Pesan Sekarang</button>
+            </div>
+            
+            <!-- Owner Panel Private -->
+            <div class="product-card">
+                <h3 class="product-title">OWNER PANEL PRIVATE</h3>
+                <div class="product-price">Rp65.000</div>
+                <ul class="features">
+                    <li>BISA OPEN PATNER PANEL</li>
+                    <li>BISA OPEN ADMIN PANEL</li>
+                    <li>BISA OPEN RESELLER PANEL</li>
+                    <li>BISA OPEN PANEL</li>
+                    <li>BISA OPEN JASA SEWA BOT</li>
+                    <li>BALMOND KLAU USAHA</li>
+                    <li>ANTI GIMMIK</li>
+                    <li>DPT 5 SERVER YG BERBEDA</li>
+                    <li>PERMANEN ANTI PT PT</li>
+                </ul>
+                <button class="order-btn" onclick="window.location.href='https://wa.me/6283141990011'">Pesan Sekarang</button>
+            </div>
+            
+            <!-- Tangan Kiri Panel Public -->
+            <div class="product-card">
+                <h3 class="product-title">TANGAN KIRI PANEL PUBLIC</h3>
+                <div class="product-price">Rp70.000</div>
+                <ul class="features">
+                    <li>BISA OPEN OWNER PANEL</li>
+                    <li>BISA OPEN PATNER PANEL</li>
+                    <li>BISA OPEN ADMIN PANEL</li>
+                    <li>BISA OPEN RESELLER PANEL</li>
+                    <li>BISA OPEN PANEL</li>
+                    <li>BISA OPEN JASA SEWA BOT</li>
+                    <li>BALMOND KLAU USAHA</li>
+                    <li>ANTI GIMMIK</li>
+                    <li>DPT 6 SERVER YG BERBEDA</li>
+                    <li>PERMANEN ANTI PT PT</li>
+                </ul>
+                <button class="order-btn" onclick="window.location.href='https://wa.me/6283141990011'">Pesan Sekarang</button>
+            </div>
+            
+            <!-- Tangan Kiri Panel Private -->
+            <div class="product-card">
+                <h3 class="product-title">TANGAN KIRI PANEL PRIVATE</h3>
+                <div class="product-price">Rp85.000</div>
+                <ul class="features">
+                    <li>BISA OPEN OWNER PANEL</li>
+                    <li>BISA OPEN PATNER PANEL</li>
+                    <li>BISA OPEN ADMIN PANEL</li>
+                    <li>BISA OPEN RESELLER PANEL</li>
+                    <li>BISA OPEN PANEL</li>
+                    <li>BISA OPEN JASA SEWA BOT</li>
+                    <li>BALMOND KLAU USAHA</li>
+                    <li>ANTI GIMMIK</li>
+                    <li>DPT 7 SERVER YG BERBEDA</li>
+                    <li>PERMANEN ANTI PT PT</li>
+                </ul>
+                <button class="order-btn" onclick="window.location.href='https://wa.me/6283141990011'">Pesan Sekarang</button>
+            </div>
+            
+            <!-- Tangan Kanan Panel Public -->
+            <div class="product-card">
+                <h3 class="product-title">TANGAN KANAN PANEL PUBLIC</h3>
+                <div class="product-price">Rp90.000</div>
+                <ul class="features">
+                    <li>BISA OPEN OWNER PANEL</li>
+                    <li>BISA OPEN PATNER PANEL</li>
+                    <li>BISA OPEN ADMIN PANEL</li>
+                    <li>BISA OPEN RESELLER PANEL</li>
+                    <li>BISA OPEN PANEL</li>
+                    <li>BISA OPEN JASA SEWA BOT</li>
+                    <li>BALMOND KLAU USAHA</li>
+                    <li>ANTI GIMMIK</li>
+                    <li>DPT 8 SERVER YG BERBEDA</li>
+                    <li>PERMANEN ANTI PT PT</li>
+                </ul>
+                <button class="order-btn" onclick="window.location.href='https://wa.me/6283141990011'">Pesan Sekarang</button>
+            </div>
+            
+            <!-- Tangan Kanan Panel Private -->
+            <div class="product-card">
+                <h3 class="product-title">TANGAN KANAN PANEL PRIVATE</h3>
+                <div class="product-price">Rp105.000</div>
+                <ul class="features">
+                    <li>BISA OPEN OWNER PANEL</li>
+                    <li>BISA OPEN PATNER PANEL</li>
+                    <li>BISA OPEN ADMIN PANEL</li>
+                    <li>BISA OPEN RESELLER PANEL</li>
+                    <li>BISA OPEN PANEL</li>
+                    <li>BISA OPEN JASA SEWA BOT</li>
+                    <li>BALMOND KLAU USAHA</li>
+                    <li>ANTI GIMMIK</li>
+                    <li>DPT 8 SERVER YG BERBEDA</li>
+                    <li>PERMANEN ANTI PT PT</li>
+                </ul>
+                <button class="order-btn" onclick="window.location.href='https://wa.me/6283141990011'">Pesan Sekarang</button>
+            </div>
+            
+            <!-- Developer Panel -->
+            <div class="product-card">
+                <h3 class="product-title">DEVELOPER PANEL</h3>
+                <div class="product-price">Rp115.000</div>
+                <ul class="features">
+                    <li>BISA OPEN TANGAN KANAN/KIRI PANEL PT</li>
+                    <li>BISA OPEN OWNER PANEL</li>
+                    <li>BISA OPEN PATNER PANEL</li>
+                    <li>BISA OPEN ADMIN PANEL</li>
+                    <li>BISA OPEN RESELLER PANEL</li>
+                    <li>BISA OPEN PANEL</li>
+                    <li>BISA OPEN JASA SEWA BOT</li>
+                    <li>DPT 10 SERVER ADP YG BERBEDA</li>
+                    <li>PERMANEN ANTI PT</li>
+                </ul>
+                <button class="order-btn" onclick="window.location.href='https://wa.me/6283141990011'">Pesan Sekarang</button>
+            </div>
+        </div>
+        
+        <h2 class="section-title">LAYANAN VPS DIGITAL OCEAN</h2>
+        
+        <table class="vps-table">
+            <thead>
+                <tr>
+                    <th>Spesifikasi</th>
+                    <th>Harga</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>RAM 4 CORE 2</td>
+                    <td>Rp30.000</td>
+                </tr>
+                <tr>
+                    <td>RAM 8 CORE 4</td>
+                    <td>Rp35.000</td>
+                </tr>
+                <tr>
+                    <td>RAM 16 CORE 4</td>
+                    <td>Rp40.000</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="bonus-section">
+            <h3 class="bonus-title">BONUS PEMBELIAN VPS:</h3>
+            <ul class="bonus-list">
+                <li>FREE INSTAL PANEL PTERODACTLY</li>
+                <li>FREE INSTAL THEMA PANEL</li>
+                <li>FREE REQUEST DONAIN PANEL</li>
+                <li>MENGGUNAKAN DO PAYPAL</li>
+                <li>MASA AKTIF VPS 30 HARI</li>
+                <li>GARANSI 20 HARI (2X CLAIM)</li>
+            </ul>
+        </div>
+        
+        <h2 class="section-title">JASA / LAYANAN LAINNYA</h2>
+        
+        <table class="vps-table">
+            <thead>
+                <tr>
+                    <th>Layanan</th>
+                    <th>Harga</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>INSTAL PANEL</td>
+                    <td>Rp10.000</td>
+                </tr>
+                <tr>
+                    <td>INSTAL THEMA</td>
+                    <td>Rp10.000</td>
+                </tr>
+                <tr>
+                    <td>RESSELLER SUBDOMAIN</td>
+                    <td>Rp15.000</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="bonus-section">
+            <h3 class="bonus-title">BONUS PEMBELIAN JASA:</h3>
+            <ul class="bonus-list">
+<li>BISA JASA INSTAL PANEL AND THEMA,FREE 2 VPS DLL</li>
+                <li>BISA JUAL DOMAIN AND NODE SEPUASNYA,INSTAL PANEL SENDIRI</li>
+            </ul>
+        </div>
+        
+        <h2 class="section-title">SELL SCRIPT PREMIUM</h2>
+        
+        <table class="vps-table">
+            <thead>
+                <tr>
+                    <th>Script</th>
+                    <th>Harga</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>SC VOID V12.2</td>
+                    <td>Rp60.000</td>
+                </tr>
+                <tr>
+                    <td>SC TREDICT INVICTUS</td>
+                    <td>Rp55.000</td>
+                </tr>
+                <tr>
+                    <td>SC AANZ V7</td>
+                    <td>Rp30.000</td>
+                </tr>
+                <tr>
+                    <td>SC AAN V6/V7</td>
+                    <td>Rp30.000</td>
+                </tr>
+                <tr>
+                    <td>SC NABZX V7</td>
+                    <td>Rp45.000</td>
+                </tr>
+                <tr>
+        <div class="bonus-section">
+            <h3 class="bonus-title">BONUS PEMBELIAN SCRIPT:</h3>
+            <ul class="bonus-list">
+                <li>SC AAN V6/7 SC TYPE STORE</li>
+                <li>SC NABZX V7 </li>
+                <li>UPDATE SAMPAI DEV NY PENSI</li>
+                <li>SC TYPE CPANEL,CVPS,DLL</li>
+                <li>MENGGUNAKAN DATABASE GITHUB BETIPY PW AND NO</li>
+            </ul>
+        </div>
+        
+        <h2 class="section-title">RESSELLER SCRIPT PREMIUM</h2>
+        
+        <table class="vps-table">
+            <thead>
+                <tr>
+                    <th>Layanan</th>
+                    <th>Harga</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>RESELLER SC NABZX V7</td>
+                    <td>Rp55.000</td>
+                </tr>
+                <tr>
+                    <td>RESELLER SC AAN V6/7</td>
+                    <td>Rp45.000</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="bonus-section">
+            <h3 class="bonus-title">BONUS RESELLER/OWNER SCRIPT:</h3>
+            <ul class="bonus-list">
+                <li>BEBAS ADD DB</li>
+                <li>BISA JUAL SC</li>
+                <li>BISA JUAL RESELLER SC (KHUSUS OWNER)</li>
+            </ul>
+        </div>
+        
+        <footer>
+            <h3>Hubungi Kami</h3>
+            <div class="contact-info">
+                <p>WhatsApp: <a href="https://wa.me/6283141990011">6283141990011</a></p>
+                <p>© 2023 𝐒𝐮𝐓𝐚𝐗𝐝 Hosting - All Rights Reserved</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
